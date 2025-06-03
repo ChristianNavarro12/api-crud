@@ -15,10 +15,11 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
 app.use("/api", require("./api/routes/indexRouter"));
 app.use("/docs", swaggerRouter);
 
-const PORT = process.env.PORT || 9000;
+// const PORT = process.env.PORT || 9000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor en el puerto  http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`🚀 Servidor en el puerto  http://localhost:${PORT}`);
+// });
+app.listen(3000, () => console.log("Server ready on port 3000."));
 
 module.exports = app;
