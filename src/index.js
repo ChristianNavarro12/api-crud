@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const serverless = require('serverless-http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const swaggerRouter = require("./config/swagger");
@@ -13,10 +14,4 @@ app.use(bodyParser.json());
 app.use("/api", require("./routes/indexRouter"));
 app.use("/", swaggerRouter);
 
-const PORT = process.env.PORT || 9000;
-
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor en el puerto  http://localhost:${PORT}`);
-});
-
-module.exports = app;
+module.exports.handler = serverless(app);
