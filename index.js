@@ -31,3 +31,5 @@ const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor en el puerto  http://localhost:${PORT}`);
 });
+
+module.exports = app;
