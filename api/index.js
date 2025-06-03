@@ -11,16 +11,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.json({
-    mensaje: "📌 API REST Students",
+  res.send(JSON.stringify({
+    mensaje: "📌 API REST en Vercel funcionando correctamente",
     rutas_disponibles: {
       GET: "/api/...",
       POST: "/api/...",
       PUT: "/api/...",
       DELETE: "/api/..."
     },
-    nota: "Las rutas están organizadas así debido a que Vercel no soporta Swagger u otras interfaces de documentación por defecto en funciones serverless."
-  });
+    nota: "Swagger no está disponible porque Vercel usa funciones serverless"
+  }));
 });
 
 app.use("/api", require("./routes/indexRouter"));
