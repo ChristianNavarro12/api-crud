@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use("/api", require("./api/routes/indexRouter"));
-app.use("/", swaggerRouter);
+app.use("/docs", swaggerRouter);
 
 const PORT = process.env.PORT || 9000;
 

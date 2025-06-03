@@ -13,7 +13,7 @@ const options = {
     },
   },
   apis: [
-    "src/routes/studentRouter.js"
+    "api/routes/studentRouter.js"
   ],
 };
 
