@@ -19,7 +19,7 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-router.use("/", swaggerUi.serve);
-router.get("/", swaggerUi.setup(specs));
+router.use("/docs", swaggerUi.serve);
+router.get("/docs", swaggerUi.setup(specs));
 
 module.exports = router;
