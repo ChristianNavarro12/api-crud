@@ -1,9 +1,10 @@
 const express = require('express');
-const app = express();
+const serverless = require('serverless-http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const swaggerRouter = require("./config/swagger");
 
+const app = express();
 app.use(cors());
 
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use("/docs", swaggerRouter);
 // app.listen(PORT, () => {
 //   console.log(`🚀 Servidor en el puerto  http://localhost:${PORT}`);
 // });
-app.listen(3000, () => console.log("Server ready on port 3000."));
+
 
 module.exports = app;
+module.exports.handler = serverless(app);
