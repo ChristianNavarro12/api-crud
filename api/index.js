@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/home", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.use("/api", require("./routes/indexRouter"));
 app.use("/docs", swaggerRouter);
 
@@ -20,5 +20,3 @@ app.listen(PORT, () => {
   console.log(`🚀 Servidor en el puerto  http://localhost:${PORT}`);
 });
 
-
-module.exports = app;
